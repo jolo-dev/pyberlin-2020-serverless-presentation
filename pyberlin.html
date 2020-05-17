@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns#">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- SEO -->
+    <title>Serverless with AWS Lambda and Python</title>
+    <meta name="description"
+        content="A presentation for PyBerlin about how to do serverless with AWS Lambda and Python" />
+
+    <!-- URL CANONICAL -->
+    <link rel="canonical" href="https://github.com/jolo-dev/pyberlin-2020-serverless-presentation/settings" />
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,700,700i%7CMaitree:200,300,400,600,700&amp;subset=latin-ext"
+        rel="stylesheet" />
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Space+Mono&amp;display=swap" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" />
+    <!-- CSS WebSlides -->
+    <link rel="stylesheet" type="text/css" media="all" href="static/css/webslides.css" />
+
+    <!-- Custom Style -->
+    <link rel="stylesheet" type="text/css" media="all" href="static/css/style.css" />
+
+    <!-- SOCIAL CARDS (ADD YOUR INFO) -->
+    <!-- TWITTER -->
+    <meta name="twitter:card" content="John Nguyen CV" />
+    <meta name="twitter:site" content="@johnyscrazy" />
+    <meta name="twitter:creator" content="@johnyscrazy" />
+    <meta name="twitter:title" content="JoLo — Twitter Account" />
+    <meta name="twitter:description" content="JoLo- Full-Stack Engineer" />
+    <meta name="twitter:image" content="static/images/share-webslides.jpg" />
+
+    <!-- FAVICONS -->
+    <link rel="apple-touch-icon" sizes="57x57" href="static/favicon.ico/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="static/favicon.ico/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="static/favicon.ico/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="static/favicon.ico/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="static/favicon.ico/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="static/favicon.ico/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="static/favicon.ico/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="static/favicon.ico/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="static/favicon.ico/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="static/favicon.ico/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="static/favicon.ico/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="static/favicon.ico/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="static/favicon.ico/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+    <!-- Android -->
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="theme-color" content="#333333" />
+</head>
+
+<body>
+    <main role="main">
+        <article id="webslides" class="vertical">
+
+            <section class="wrap">
+                <h1 class="fadeInDown">Serverless with AWS Lambda and Python</h1>
+                <div class="animate subtitle">
+                    <span>P</span><span>y</span><span>B</span><span>e</span><span>r</span><span>l</span><span>i</span><span>n</span><span>-</span>&nbsp;<span>2</span><span>0</span><span>2</span><span>0</span>&nbsp;<span>J</span><span>o</span><span>h</span><span>n</span>&nbsp;<span>N</span><span>g</span><span>u</span><span>y</span><span>e</span><span>n</span>
+                </div>
+            </section>
+
+            <section class="wrap">
+                <div class="wrap size-50 aligncenter">
+                    <h1><strong>Agenda</strong></h1>
+                    <div class="agenda-box fadeInUp bg-white shadow">
+                      <ul class="flexblock reasons">
+                        <li>
+                          <h2>What is Serverless?</h2>
+                          <p>Benefits and Limitations</p>
+                        </li>
+                        <li>
+                          <h2>Serverless/Cloud Services</h2>
+                          <p>Focusing on AWS</p>
+                        </li>
+                        <li>
+                            <h2>AWS Lambda</h2>
+                            <p>How it looks like in the AWS Console</p>
+                          </li>
+                          <li>
+                            <h2>Demo</h2>
+                            <p>Deploying Functions using Frameworks</p>
+                          </li>
+                      </ul>
+                    </div>
+                    <!-- .end .bg-white shadow -->
+                  </div>
+            </section>
+
+            <section>
+                <!--.wrap = container (width: 90%) -->
+                <div class="wrap intro">
+                    <h1 class="about-me"><strong>About Me</strong></h1>
+                    <div class="img">
+                        <img class="fadeInUp"
+                            src="https://www.prisma-capacity.eu/sites/default/files/2019-08/John_option2_0.jpg"
+                            alt="JohnPrisma" />
+                    </div>
+                    <div class="name">
+                        <h1 class="fadeInDown"><strong>John Nguyen</strong></h1>
+                        <div class="animate name-subtitle">
+                            <span>F</span><span>u</span><span>l</span><span>l</span><span>-</span><span>S</span><span>t</span><span>a</span><span>c</span><span>k</span>&nbsp;<span>//</span>&nbsp;
+                            <span>D</span><span>a</span><span>t</span><span>a</span>&nbsp;
+                            <span>//</span>&nbsp;<span>D</span><span>e</span><span>v</span><span>O</span><span>p</span><span>s</span>&nbsp;<span>E</span><span>n</span><span>g</span><span>i</span><span>n</span><span>e</span><span>e</span><span>r</span>
+                        </div>
+                        <div class="social-media">
+                            <a class="social-link" href="https://codepen.io/jolo-dev/" target="_blank">
+                                <i class="fab fa-codepen"></i>
+                            </a>
+                            <a class="social-link" href="https://github.com/jolo-dev" target="_blank">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a class="social-link" href="https://twitter.com/JohnysCrazy" target="_blank">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a class="social-link" href="https://www.linkedin.com/in/john-long-nguyen-256457111/" target="_blank">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- .end .wrap -->
+            </section>
+            
+            <section class="wrap">
+                <h1 style="margin-bottom: 5%;">What is Serverless?</h1>
+            </section>
+
+            <section class="slide-bottom">
+                <span class="background" style="background-image:url('https://i.ytimg.com/vi/9eHoyUVo-yg/maxresdefault.jpg')"></span>
+                <div class="wrap">
+                    <div class="content-left">
+                      <h1 style="font-style: normal;!important" class="animate"><a style="color: white;text-decoration: underline;" target="_blank" href="https://www.youtube.com/watch?v=9eHoyUVo-yg"><span>A</span><span>W</span><span>S</span>&nbsp;<span>R</span><span>e</span><span>:</span><span>I</span><span>n</span><span>v</span><span>e</span><span>n</span><span>t</span>&nbsp;<span>2</span><span>0</span><span>1</span><span>4</span></a></h1>
+                    </div>
+                  </div>
+            </section>
+            <section class="wrap">
+                <div class="grid">
+                    <div class="column fadeInDown">
+                      <h2>Benefits</h2>
+                        <p>That all means, we are no longer managing underlying infrastructure and its server. No longer provision resources because it detects and scales automatically according the environment circumstances. #NoSSH #NoOps</p>
+                        <p class="text-symbols">* * *</p>
+                        <p>No longer provision resources because it detects and scales automatically according the environment circumstances</p>
+                        <p class="text-symbols">* * *</p>
+                        <p>Developer Friendly because flexible in Programming Language #DUX</p>
+                    </div>
+                    <!-- end .column -->
+                    <div class="column fadeInUp">
+                        <h2>Limitations</h2>
+                        <p>For a DevOps-Engineer it increases the toolset in managing application</p>
+                        <p class="text-symbols">* * *</p>
+                        <p>Many different tools for monitoring</p>
+                        <p class="text-symbols">* * *</p>
+                        <p>Machine Learning is really hard because of the big libs</p>
+                    </div>
+                    <!-- end .column -->
+                  </div>
+            </section>
+            <section class="wrap aligncenter">
+                <h2>Post: My Pain with Serverless</h2>
+                <div class="devto">
+                    <div class="card fadeInDown">
+                        <a href="https://dev.to/jolo/my-pain-with-serverless-and-aws-lambda-4hko" target="_blank"
+                            class="aos-init aos-animate">
+                            <div class="max-w-sm rounded overflow-hidden shadow-lg bg-white">
+                                <i class="fab fa-dev"></i>
+                                <div class="px-6 py-4">
+                                    <div class="font-bold text-xl mb-2">
+                                        My Pain with Serverless
+                                    </div>
+                                    <p class="text-gray-700 text-base"></p>
+                                </div>
+                                <div class="px-6 py-4">
+                                    <span
+                                        class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700">
+                                        #serverless </span><span
+                                        class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700">
+                                        #aws </span><span
+                                        class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700">
+                                        #lambda </span><span
+                                        class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700">
+                                        #devops
+                                    </span>
+                                    <div class="reactions">
+                                        <img src="https://practicaldev-herokuapp-com.freetls.fastly.net/assets/reactions-stack-ee166e138ca182a567f74c986b6f810f670f4d199aca9c550cc7e6f49f34bd33.png"
+                                            alt="heart" width="50" />
+                                        7
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </section>
+            <section class="wrap fadeInUp">
+                <div class="expertises">
+                    <h2>AWS Lambda</h2>
+                    <ul class="description">
+                        <li>
+                            Single Page Application (<b>SPA</b>) in <b>JavaScript</b> or
+                            preferable in <b>VueJS</b>
+                        </li>
+                        <li>
+                            Data Visualisation with <b>Python</b> and libraries like Bokeh
+                            or Plotly
+                        </li>
+                        <li>Data Management with <b>SQL</b></li>
+                        <li>
+                            Serverless-Functions with <b>AWS Lambda</b> or
+                            <b>Azure Functions</b>
+                        </li>
+                        <li>Version-Management and <b>CI/CD</b> with <b>Gitlab</b></li>
+                        <li>Infrastructure to Code with <b>AWS Cloudformation</b></li>
+                        <li>Containerizing Application with <b>Docker</b></li>
+                    </ul>
+                </div>
+            </section>
+            <section class="wrap">
+                <h1>Work Experiences</h1>
+            </section>
+            <section class="wrap">
+                <div class="card-50 bg-white fadeInUp">
+                    <div class="flex-content">
+                        <h4>Data DevOpsEngineer</h4>
+                        <div class="title">
+                            PRISMA European Capacity GmbH | May 2018 - Present
+                        </div>
+                        <ul class="description">
+                            <li>
+                                Built an Infrastructure to leverage Data from the Platform to
+                                the End-User
+                            </li>
+                            <li>
+                                Created a Datawarehouse with SQL and build Dashboards in
+                                Apache Zeppelin
+                            </li>
+                            <li>Sending automated Reports with AWS Lambda</li>
+                        </ul>
+                    </div>
+                    <div class="flex-content">
+                        <h4>Contractor at NG's Future Team</h4>
+                        <div class="title">
+                            National Grid (UK) | Oct 2018 - Dec 2018
+                        </div>
+                        <ul class="description">
+                            <li>
+                                Support in Evaluating the current Capacity and Balancing
+                                IT-System
+                            </li>
+                            <li>Spread the PRISMA-Spirit</li>
+                        </ul>
+                    </div>
+
+                </div>
+                </div>
+            </section>
+            <section class="wrap">
+                <div class="card-25 bg-white fadeInUp">
+                    <div class="flex-content">
+                        <h4>Automation Operations</h4>
+                        <div class="title">
+                            PRISMA European Capacity GmbH | Dec 2016 - May 2018
+                        </div>
+                        <ul class="description">
+                            <li>
+                                Automated Regression Tests with Selenide (Selenium-Wrapper)
+                            </li>
+                            <li>
+                                Automating Jira Workflows and Backups of Atlassian's Jira and
+                                Confluence
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="flex-content">
+                        <h4>Web Developer</h4>
+                        <div class="title">
+                            profitsol GmbH | Apr 2015 - May 2018
+                        </div>
+                        <ul class="description">
+                            <li>Maintaining a Wellness Booking Platform</li>
+                            <li>
+                                Developing Features for the platform and Wordpress-Plugin for
+                                external Clients
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="flex-content">
+                        <h4>Network & Hardware Administrator</h4>
+                        <div class="title">
+                            Sächsische Lehmbaugruppe | Jan 2016 - Nov 2016
+                        </div>
+                        <ul class="description">
+                            <li>Maintaining the Network and Hardware of a School</li>
+                        </ul>
+                    </div>
+                    <div class="flex-content">
+                        <h4>Course Instructor for Programming Basics</h4>
+                        <div class="title">
+                            SRZ Dresden | Mar 2014 - Jul 2014
+                        </div>
+                        <ul class="description">
+                            <li>
+                                Teached Objective Pascal to pupils from 10yrs until 14yrs
+                            </li>
+                        </ul>
+                    </div>
+            </section>
+        </article>
+        <!-- end article -->
+    </main>
+    <!-- end main -->
+
+    <!-- A global footer -->
+
+    <!-- <footer role="contentinfo">
+        <div class="wrap">
+            <div>
+                <h5>Contacts</h5>
+                <a class="social-link" href="https://codepen.io/jolo-dev/" target="_blank">
+                    <i class="fab fa-codepen"></i>
+                </a>
+                <a class="social-link" href="https://github.com/jolo-dev" target="_blank">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a class="social-link" href="https://twitter.com/JohnysCrazy" target="_blank">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a class="social-link" href="https://www.linkedin.com/in/john-long-nguyen-256457111/" target="_blank">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+            </div>
+            <div class="download">
+                <button><a href="./John_Nguyen_CV.pdf">Download CV</a></button>
+            </div>
+        </div>
+    </footer> -->
+
+    <!-- Required -->
+    <script src="static/js/webslides.min.js"></script>
+    <script src="static/js/script.js"></script>
+</body>
+
+</html>

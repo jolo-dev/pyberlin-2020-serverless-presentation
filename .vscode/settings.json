@@ -1,0 +1,22 @@
+{
+  "markdown.marp.themes": ["./webslides.css", "./style.css"],
+  "workbench.colorCustomizations": {
+    "activityBar.activeBackground": "#775ed4",
+    "activityBar.activeBorder": "#dd9581",
+    "activityBar.background": "#775ed4",
+    "activityBar.foreground": "#e7e7e7",
+    "activityBar.inactiveForeground": "#e7e7e799",
+    "activityBarBadge.background": "#dd9581",
+    "activityBarBadge.foreground": "#15202b",
+    "statusBar.background": "#5536c9",
+    "statusBar.border": "#5536c9",
+    "statusBar.foreground": "#e7e7e7",
+    "statusBarItem.hoverBackground": "#775ed4",
+    "titleBar.activeBackground": "#5536c9",
+    "titleBar.activeForeground": "#e7e7e7",
+    "titleBar.border": "#5536c9",
+    "titleBar.inactiveBackground": "#5536c999",
+    "titleBar.inactiveForeground": "#e7e7e799"
+  },
+  "peacock.color": "#5536c9"
+}
