@@ -1,431 +1,542 @@
 <!DOCTYPE html>
 <html lang="en" prefix="og: http://ogp.me/ns#">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <!-- SEO -->
-    <title>Serverless with AWS Lambda and Python</title>
-    <meta
-      name="description"
-      content="A presentation for PyBerlin about how to do serverless with AWS Lambda and Python"
-    />
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <!-- URL CANONICAL -->
-    <link
-      rel="canonical"
-      href="https://github.com/jolo-dev/pyberlin-2020-serverless-presentation/settings"
-    />
+  <!-- SEO -->
+  <title>Serverless with AWS Lambda and Python</title>
+  <meta name="description"
+    content="A presentation for PyBerlin about how to do serverless with AWS Lambda and Python" />
 
-    <!-- Google Fonts -->
-    <link
-      href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,700,700i%7CMaitree:200,300,400,600,700&amp;subset=latin-ext"
-      rel="stylesheet"
-    />
+  <!-- URL CANONICAL -->
+  <link rel="canonical" href="https://github.com/jolo-dev/pyberlin-2020-serverless-presentation/settings" />
 
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css?family=Space+Mono&amp;display=swap"
-    />
-    <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
-    />
-    <!-- CSS WebSlides -->
-    <link
-      rel="stylesheet"
-      type="text/css"
-      media="all"
-      href="static/css/webslides.css"
-    />
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,700,700i%7CMaitree:200,300,400,600,700&amp;subset=latin-ext"
+    rel="stylesheet" />
 
-    <!-- Custom Style -->
-    <link
-      rel="stylesheet"
-      type="text/css"
-      media="all"
-      href="static/css/style.css"
-    />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Space+Mono&amp;display=swap" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" />
+  <!-- CSS WebSlides -->
+  <link rel="stylesheet" type="text/css" media="all" href="static/css/webslides.css" />
 
-    <!-- SOCIAL CARDS (ADD YOUR INFO) -->
-    <!-- TWITTER -->
-    <meta name="twitter:card" content="John Nguyen CV" />
-    <meta name="twitter:site" content="@johnyscrazy" />
-    <meta name="twitter:creator" content="@johnyscrazy" />
-    <meta name="twitter:title" content="JoLo — Twitter Account" />
-    <meta name="twitter:description" content="JoLo- Full-Stack Engineer" />
-    <meta name="twitter:image" content="static/images/share-webslides.jpg" />
+  <link rel="stylesheet" type="text/css" media="all"
+    href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
 
-    <!-- FAVICONS -->
-    <link
-      rel="apple-touch-icon"
-      sizes="57x57"
-      href="static/favicon.ico/apple-icon-57x57.png"
-    />
-    <link
-      rel="apple-touch-icon"
-      sizes="60x60"
-      href="static/favicon.ico/apple-icon-60x60.png"
-    />
-    <link
-      rel="apple-touch-icon"
-      sizes="72x72"
-      href="static/favicon.ico/apple-icon-72x72.png"
-    />
-    <link
-      rel="apple-touch-icon"
-      sizes="76x76"
-      href="static/favicon.ico/apple-icon-76x76.png"
-    />
-    <link
-      rel="apple-touch-icon"
-      sizes="114x114"
-      href="static/favicon.ico/apple-icon-114x114.png"
-    />
-    <link
-      rel="apple-touch-icon"
-      sizes="120x120"
-      href="static/favicon.ico/apple-icon-120x120.png"
-    />
-    <link
-      rel="apple-touch-icon"
-      sizes="144x144"
-      href="static/favicon.ico/apple-icon-144x144.png"
-    />
-    <link
-      rel="apple-touch-icon"
-      sizes="152x152"
-      href="static/favicon.ico/apple-icon-152x152.png"
-    />
-    <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="static/favicon.ico/apple-icon-180x180.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="192x192"
-      href="static/favicon.ico/android-icon-192x192.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="static/favicon.ico/favicon-32x32.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="96x96"
-      href="static/favicon.ico/favicon-96x96.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="16x16"
-      href="static/favicon.ico/favicon-16x16.png"
-    />
-    <link rel="manifest" href="/manifest.json" />
-    <meta name="msapplication-TileColor" content="#ffffff" />
-    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
-    <meta name="theme-color" content="#ffffff" />
+    <link rel="stylesheet" href="static/css/styles/monokai-sublime.css">
 
-    <!-- Android -->
-    <meta name="mobile-web-app-capable" content="yes" />
-    <meta name="theme-color" content="#333333" />
-  </head>
+  <!-- Custom Style -->
+  <link rel="stylesheet" type="text/css" media="all" href="static/css/style.css" />
 
-  <body>
-    <main role="main">
-      <article id="webslides" class="vertical">
-        <section class="wrap">
-          <h1 class="fadeInDown">Serverless with AWS Lambda and Python</h1>
-          <div class="animate subtitle">
-            <span>P</span><span>y</span><span>B</span><span>e</span
-            ><span>r</span><span>l</span><span>i</span><span>n</span
-            ><span>-</span>&nbsp;<span>2</span><span>0</span><span>2</span
-            ><span>0</span>&nbsp;<span>J</span><span>o</span><span>h</span
-            ><span>n</span>&nbsp;<span>N</span><span>g</span><span>u</span
-            ><span>y</span><span>e</span><span>n</span>
+  <!-- SOCIAL CARDS (ADD YOUR INFO) -->
+  <!-- TWITTER -->
+  <meta name="twitter:card" content="John Nguyen CV" />
+  <meta name="twitter:site" content="@johnyscrazy" />
+  <meta name="twitter:creator" content="@johnyscrazy" />
+  <meta name="twitter:title" content="JoLo — Twitter Account" />
+  <meta name="twitter:description" content="JoLo- Full-Stack Engineer" />
+  <meta name="twitter:image" content="static/images/share-webslides.jpg" />
+
+  <link rel="manifest" href="/manifest.json" />
+  <meta name="msapplication-TileColor" content="#ffffff" />
+  <meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
+  <meta name="theme-color" content="#ffffff" />
+
+  <!-- Android -->
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="theme-color" content="#333333" />
+</head>
+
+<body>
+  <main role="main">
+    <article id="webslides" class="vertical">
+      <section class="wrap">
+        <h1 class="fadeInDown">Serverless with AWS Lambda and Python</h1>
+        <div class="animate subtitle">PyBerlin- 2020 John Nguyen</div>
+      </section>
+
+      <section>
+        <div class="wrap size-50 aligncenter">
+          <h1><strong>Agenda</strong></h1>
+          <div class="agenda-box fadeInUp bg-white shadow">
+            <ul class="flexblock reasons">
+              <li>
+                <h2>What is Serverless?</h2>
+                <p>Benefits and Limitations</p>
+              </li>
+              <li>
+                <h2>Serverless/Cloud Services</h2>
+                <p>Focusing on AWS</p>
+              </li>
+              <li>
+                <h2>AWS Lambda</h2>
+                <p>How it looks like in the AWS Console</p>
+              </li>
+              <li>
+                <h2>Demo</h2>
+                <p>Deploying Functions using Frameworks</p>
+              </li>
+            </ul>
           </div>
-        </section>
+          <!-- .end .bg-white shadow -->
+        </div>
+      </section>
 
-        <section class="wrap">
-          <div class="wrap size-50 aligncenter">
-            <h1><strong>Agenda</strong></h1>
-            <div class="agenda-box fadeInUp bg-white shadow">
-              <ul class="flexblock reasons">
-                <li>
-                  <h2>What is Serverless?</h2>
-                  <p>Benefits and Limitations</p>
-                </li>
-                <li>
-                  <h2>Serverless/Cloud Services</h2>
-                  <p>Focusing on AWS</p>
-                </li>
-                <li>
-                  <h2>AWS Lambda</h2>
-                  <p>How it looks like in the AWS Console</p>
-                </li>
-                <li>
-                  <h2>Demo</h2>
-                  <p>Deploying Functions using Frameworks</p>
-                </li>
-              </ul>
-            </div>
-            <!-- .end .bg-white shadow -->
+      <section>
+        <!--.wrap = container (width: 90%) -->
+        <div class="wrap intro">
+          <h1 class="about-me"><strong>About Me</strong></h1>
+          <div class="img">
+            <img class="fadeInUp" src="https://www.prisma-capacity.eu/sites/default/files/2019-08/John_option2_0.jpg"
+              alt="JohnPrisma" />
           </div>
-        </section>
-
-        <section>
-          <!--.wrap = container (width: 90%) -->
-          <div class="wrap intro">
-            <h1 class="about-me"><strong>About Me</strong></h1>
-            <div class="img">
-              <img
-                class="fadeInUp"
-                src="https://www.prisma-capacity.eu/sites/default/files/2019-08/John_option2_0.jpg"
-                alt="JohnPrisma"
-              />
-            </div>
-            <div class="name fadeInDown">
-              <h1><strong>John Nguyen</strong></h1>
-              <div class="animate name-subtitle">
-                <span>F</span><span>u</span><span>l</span><span>l</span
-                ><span>-</span><span>S</span><span>t</span><span>a</span
-                ><span>c</span><span>k</span>&nbsp;<span>//</span>&nbsp;
-                <span>D</span><span>a</span><span>t</span><span>a</span
-                ><span>/</span><span>D</span><span>e</span><span>v</span
-                ><span>O</span><span>p</span><span>s</span>&nbsp;<span>E</span
-                ><span>n</span><span>g</span><span>i</span><span>n</span
-                ><span>e</span><span>e</span><span>r</span>
-              </div>
-              <div class="social-media">
-                <a
-                  class="social-link"
-                  href="https://codepen.io/jolo-dev/"
-                  target="_blank"
-                >
+          <div class="name fadeInDown">
+            <h1><strong>John Nguyen</strong></h1>
+            <div class="animate name-subtitle">Full-Stack // Data/DevOps Engineer</div>
+            <div id="social-media">
+              <span>
+                <a class="social-link" href="https://codepen.io/jolo-dev/" target="_blank">
                   <i class="fab fa-codepen"></i>
                 </a>
-                <a
-                  class="social-link"
-                  href="https://github.com/jolo-dev"
-                  target="_blank"
-                >
+              </span>
+              <span>
+                <a class="social-link" href="https://github.com/jolo-dev" target="_blank">
                   <i class="fab fa-github"></i>
                 </a>
-                <a
-                  class="social-link"
-                  href="https://twitter.com/JohnysCrazy"
-                  target="_blank"
-                >
+              </span>
+              <span>
+                <a class="social-link" href="https://twitter.com/JohnysCrazy" target="_blank">
                   <i class="fab fa-twitter"></i>
                 </a>
-                <a
-                  class="social-link"
-                  href="https://www.linkedin.com/in/john-long-nguyen-256457111/"
-                  target="_blank"
-                >
+              </span>
+              <span>
+                <a class="social-link" href="https://www.linkedin.com/in/john-long-nguyen-256457111/" target="_blank">
                   <i class="fab fa-linkedin-in"></i>
                 </a>
+              </span>
+              <span>
+                <a class="social-link" href="https://jolodev.guru/" target="_blank">
+                  <i class="fas fa-globe"></i>
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
+        <!-- .end .wrap -->
+      </section>
+
+      <section class="wrap">
+        <h1 style="margin-bottom: 5%;">What is Serverless?</h1>
+      </section>
+
+      <section>
+        <div class="wrap">
+          <h2><strong>Serverless</strong></h2>
+          <ul class="flexblock features">
+            <li>
+              <div>
+                <h2>
+                  <!-- <img src="static/img/serverless-seeklogo.com.svg" alt="serverless"> -->
+                  <object style="width: 80px;" data="static/img/serverless-seeklogo.com.svg"
+                    type="image/svg+xml"></object>
+                  <span class="animate">Care less about Server</span>
+                </h2>
+                Less frictions about underlying infrastructure and ops-tasks
               </div>
-            </div>
-          </div>
-          <!-- .end .wrap -->
-        </section>
+            </li>
+            <li>
+              <div>
+                <h2>
+                  <i class="icons fas fa-money-check-alt"></i>
+                  <span class="animate">Pay-As-You-Go</span>
+                </h2>
+                You pay only the execution time.
+              </div>
+            </li>
+            <li>
+              <div>
+                <h2>
+                  <i class="icons fas fa-balance-scale"></i>
+                  <span class="animate">Automatic Scaling</span>
+                </h2>
+                No worrying about Scale-Out and In
+              </div>
+            </li>
+            <li>
+              <div>
+                <h2>
+                  <i class="icons fas fa-signal"></i>
+                  <span class="animate">High available</span>
+                </h2>
+                Always available as Cloud provider available ;)
+              </div>
+            </li>
+            <li>
+              <div>
+                <h2>
+                  <i class="icons far fa-file-code"></i>
+                  <span class="animate">Developer Friendly</span>
+                </h2>
+                Developer is not stuck to a particular programming language
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
 
-        <section class="wrap">
-          <h1 style="margin-bottom: 5%;">What is Serverless?</h1>
-        </section>
 
-        <section class="slide-bottom fullscreen bg-dark">
-          <!-- <span class="background" style="background-image:url('https://i.ytimg.com/vi/9eHoyUVo-yg/maxresdefault.jpg')"></span> -->
-          <div class="embed light">
-            <div
-              data-youtube
-              data-youtube-id="9eHoyUVo-yg"
-              data-autoplay
-              data-mute
-              data-loop
-              data-muted
-            ></div>
-          </div>
-          <div class="wrap">
-            <div class="content-left">
-              <h1 style="font-style: normal;!important" class="animate">
-                <a
-                  style="color: white; text-decoration: underline;"
-                  target="_blank"
-                  href="https://www.youtube.com/watch?v=9eHoyUVo-yg"
-                  ><span>A</span><span>W</span><span>S</span>&nbsp;<span>R</span
-                  ><span>e</span><span>:</span><span>I</span><span>n</span
-                  ><span>v</span><span>e</span><span>n</span
-                  ><span>t</span>&nbsp;<span>2</span><span>0</span><span>1</span
-                  ><span>4</span></a
-                >
-              </h1>
-            </div>
-          </div>
-        </section>
-        <section class="wrap">
-          <div class="grid">
-            <div class="column fadeInDown">
-              <h2>Benefits</h2>
-              <p>
-                That all means, we are no longer managing underlying
-                infrastructure and its server. No longer provision resources
-                because it detects and scales automatically according the
-                environment circumstances. #NoSSH #NoOps
-              </p>
-              <p class="text-symbols">/ / /</p>
-              <p>
-                No longer provision resources because it detects and scales
-                automatically according the environment circumstances
-              </p>
-              <p class="text-symbols">/ / /</p>
-              <p>
-                Developer Friendly because flexible in Programming Language #DUX
-              </p>
-            </div>
-            <!-- end .column -->
-            <div class="column fadeInUp">
-              <h2>Limitations</h2>
-              <p>
-                For a DevOps-Engineer it increases the toolset in managing
-                application
-              </p>
-              <p class="text-symbols">/ / /</p>
-              <p>Many different tools for monitoring</p>
-              <p class="text-symbols">/ / /</p>
-              <p>Machine Learning is really hard because of the big libs</p>
-            </div>
-            <!-- end .column -->
-          </div>
-        </section>
-        <section class="wrap aligncenter">
-          <h2>Post: My Pain with Serverless</h2>
-          <div class="devto">
-            <div class="card fadeInDown">
-              <a
-                href="https://dev.to/jolo/my-pain-with-serverless-and-aws-lambda-4hko"
-                target="_blank"
-                class="aos-init aos-animate"
-              >
-                <div
-                  class="max-w-sm rounded overflow-hidden shadow-lg bg-white"
-                >
-                  <i class="fab fa-dev"></i>
-                  <div class="px-6 py-4">
-                    <div class="font-bold text-xl mb-2">
-                      My Pain with Serverless
-                    </div>
-                    <p class="text-gray-700 text-base"></p>
-                  </div>
-                  <div class="px-6 py-4">
-                    <span
-                      class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700"
-                    >
-                      #serverless </span
-                    ><span
-                      class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700"
-                    >
-                      #aws </span
-                    ><span
-                      class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700"
-                    >
-                      #lambda </span
-                    ><span
-                      class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700"
-                    >
-                      #devops
-                    </span>
-                    <div class="reactions">
-                      <img
-                        src="https://practicaldev-herokuapp-com.freetls.fastly.net/assets/reactions-stack-ee166e138ca182a567f74c986b6f810f670f4d199aca9c550cc7e6f49f34bd33.png"
-                        alt="heart"
-                        width="50"
-                      />
-                      7
-                    </div>
-                  </div>
+      <section>
+        <div class="wrap size-70">
+          <ul class="flexblock plans blink fadeInUp">
+            <li>
+              <a target="_blank" href="#" title="Benefits">
+                <div>
+                  <!-- <span class="price">Benefits</span> -->
+                  <h1>Benefits</h1>
+                  <ul class="frameworks">
+                    <li>
+                      That all means, we are no longer managing underlying
+              infrastructure and its server. #NoSSH #NoOps
+                    </li>
+                    <li>
+                      No longer provision resources because it detects and scales
+              automatically according the environment circumstances
+                    </li>
+                    <li>
+                      Developer Friendly because flexible in Programming Language #DUX
+                    </li>
+                  </ul>
                 </div>
               </a>
-            </div>
-          </div>
-        </section>
-
-        <section class="wrap clear">
-          <div class="wrap size-50 aligncenter">
-            <h2 style="margin-bottom: 5%;">
-              <strong>Serverless Cloud Services</strong>
-            </h2>
-            <object
-              data="static/img/Serverless Services.svg"
-              type="image/svg+xml"
-            ></object>
-          </div>
-        </section>
-
-        <section class="fullscreen slide current" id="section-35" style="">
-          <div class="card-50">
-            <img
-              class="zoomIn"
-              width="50%"
-              src="https://cloudncode.files.wordpress.com/2017/03/2000px-orange_lambda-svg.png?w=1148"
-              alt="AWS Lambda"
-            />
-            <!-- end figure-->
-            <div class="flex-content">
-              <h2>AWS Lambda</h2>
-              <p>.fullscreen &gt; .card-50</p>
-              <p class="text-intro">
-                These days it's easy to make interfaces. There are a lot of
-                frameworks out there, but it's still really hard to make a great
-                interface.
-              </p>
-              <ul class="description">
-                <li><strong class="text-label">Role:</strong> Frontend</li>
-                <li><strong class="text-label">Client:</strong> Acme</li>
-                <li><strong class="text-label">Year:</strong> 2018</li>
-              </ul>
-            </div>
-            <!-- end .flex-content-->
-          </div>
-        </section>
-      </article>
-      <!-- end article -->
-    </main>
-    <!-- end main -->
-
-    <!-- A global footer -->
-
-    <!-- <footer role="contentinfo">
-        <div class="wrap">
-            <div>
-                <h5>Contacts</h5>
-                <a class="social-link" href="https://codepen.io/jolo-dev/" target="_blank">
-                    <i class="fab fa-codepen"></i>
-                </a>
-                <a class="social-link" href="https://github.com/jolo-dev" target="_blank">
-                    <i class="fab fa-github"></i>
-                </a>
-                <a class="social-link" href="https://twitter.com/JohnysCrazy" target="_blank">
-                    <i class="fab fa-twitter"></i>
-                </a>
-                <a class="social-link" href="https://www.linkedin.com/in/john-long-nguyen-256457111/" target="_blank">
-                    <i class="fab fa-linkedin-in"></i>
-                </a>
-            </div>
-            <div class="download">
-                <button><a href="./John_Nguyen_CV.pdf">Download CV</a></button>
-            </div>
+            </li>
+            <li>
+              <a target="_blank" href="#" title="Limitations">
+                <div>
+                  <!-- <span class="price">Limitations</span> -->
+                  <h1>Limitations</h1>
+                  <ul class="frameworks">
+                    <li>
+                      For a DevOps-Engineer it increases the toolset in managing
+              application
+                    </li>
+                    <li>
+                      Many different tools for monitoring
+                    </li>
+                    <li>
+                      Machine Learning is really hard because of the big libs
+                    </li>
+                  </ul>
+                </div>
+              </a>
+            </li>
+          </ul>
         </div>
-    </footer> -->
+      </section>
 
-    <!-- Required -->
-    <script src="static/js/webslides.min.js"></script>
-    <script src="static/js/script.js"></script>
-  </body>
+      <section class="wrap aligncenter">
+        <h2>Post: My Pain with Serverless</h2>
+        <div class="devto">
+          <div class="card fadeInDown">
+            <a href="https://dev.to/jolo/my-pain-with-serverless-and-aws-lambda-4hko" target="_blank"
+              class="aos-init aos-animate">
+              <div class="max-w-sm rounded overflow-hidden shadow-lg bg-white">
+                <i class="fab fa-dev"></i>
+                <div class="px-6 py-4">
+                  <div class="font-bold text-xl mb-2">
+                    My Pain with Serverless
+                  </div>
+                  <p class="text-gray-700 text-base"></p>
+                </div>
+                <div class="px-6 py-4">
+                  <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700">
+                    #serverless </span><span
+                    class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700">
+                    #aws </span><span
+                    class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700">
+                    #lambda </span><span
+                    class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700">
+                    #devops
+                  </span>
+                  <div class="reactions">
+                    <img
+                      src="https://practicaldev-herokuapp-com.freetls.fastly.net/assets/reactions-stack-ee166e138ca182a567f74c986b6f810f670f4d199aca9c550cc7e6f49f34bd33.png"
+                      alt="heart" width="50" />
+                    7
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="wrap clear">
+        <div class="aligncenter">
+          <h2 style="margin-bottom: 5%;">
+            <strong>Serverless Cloud Services</strong>
+          </h2>
+          <object class="fadeInUp" data="static/img/Serverless Services.svg" type="image/svg+xml"></object>
+        </div>
+      </section>
+
+      <section class="slide-bottom fullscreen bg-dark">
+        <!-- <span class="background" style="background-image:url('https://i.ytimg.com/vi/9eHoyUVo-yg/maxresdefault.jpg')"></span> -->
+        <div class="embed light">
+          <div data-youtube data-youtube-id="9eHoyUVo-yg" data-autoplay data-mute data-loop data-muted></div>
+        </div>
+        <div class="wrap">
+          <div class="content-left">
+            <h1>
+              <a style="color: white; text-decoration: underline;" target="_blank"
+                href="https://www.youtube.com/watch?v=9eHoyUVo-yg">
+                <span class="animate">AWS Re:Invent 2014</span>
+              </a>
+            </h1>
+          </div>
+        </div>
+      </section>
+
+      <section class="fullscreen">
+        <div class="card-50">
+          <img class="zoomIn" width="50%"
+            src="https://cloudncode.files.wordpress.com/2017/03/2000px-orange_lambda-svg.png?w=1148" alt="AWS Lambda" />
+          <!-- end figure-->
+          <div class="flex-content">
+            <h2>AWS Lambda</h2>
+            <p>Run code without thinking about servers.</p>
+            <p class="text-intro">
+            <ul>
+              <li>Event-driven, serverless computing</li>
+              <li>Managed by AWS</li>
+              <li>Focusing on business logic instead of managing Operations</li>
+              <li>Naming from Computer Science which abstracts underlying function</li>
+            </ul>
+            </p>
+            <ul class="description">
+              <li><strong class="text-label">Role:</strong> Compute</li>
+              <li><strong class="text-label">Runtime:</strong> Node.js, Python, Java, Go, C#, Custom</li>
+              <li><strong class="text-label">Year:</strong> 2014</li>
+            </ul>
+          </div>
+          <!-- end .flex-content-->
+        </div>
+      </section>
+
+      <section class="wrap">
+        <h1>AWS Console</h1>
+      </section>
+
+      <section class="wrap">
+        <h1>Lambda: Hello PyBerlin</h1>
+<pre style="margin-top: 2%;"><code class="python">def lambda_handler(event, context): # Name of the Handler
+  return {
+    'statusCode': 200,
+    'body': json.dumps('Hello PyBerlin!')
+}</code></pre>
+      </section>
+
+      <section>
+        <div class="wrap aligncenter">
+          <h1>Lambda Trigger</h1>
+          <img src="static/img/lambda-triggers.gif" alt="Lambda Trigger">
+        </div>
+      </section>
+
+      <section>
+        <div class="wrap">
+          <h1>Frameworks</h1>
+        </div>
+      </section>
+
+      <section class="fullscreen">
+        <span class="background" style="background-image:url('https://s3.amazonaws.com/assets.github.serverless/readme-serverless-framework.gif')"></span>
+      </section>
+
+      <section>
+        <div class="wrap">
+          <h2><a target="_blank" href="https://github.com/jolo-dev/serverless-flask">Template: Serverless Flask App 
+            <i class="fab fa-github"></i></a></h2>
+<pre style="margin-top: 2%;"><code class="bash">npm install -g serverless # Optional
+# sls works as well
+npx serverless install --url https://github.com/jolo-dev/serverless-flask --name my-flask-app
+
+cd my-flask-app && npm run setup
+# answer prompt
+
+npx serverless deploy
+
+# Don't forget to remove the deployment
+npx sls remove</code></pre>
+        </div>
+      </section>
+
+      <section class="fullscreen">
+        <span class="background" style="background-image:url('https://camo.githubusercontent.com/7bdd37b656c15786839d868e1075cdf1926d4272/687474703a2f2f692e696d6775722e636f6d2f6f65506e484a6e2e6a7067')"></span>
+      </section>
+
+      <section>
+        <div class="wrap">
+          <h2><a target="_blank" href="https://github.com/jolo-dev/zappa-template">Template: Zappa 
+            <i class="fab fa-github"></i></a></h2>
+<pre style="margin-top: 2%;"><code class="bash">python3 -m cookiecutter # Mandatory
+
+python3 -m cookiecutter gh:https://github.com/jolo-dev/zappa-template
+
+# answer prompt
+cd *project_slug*
+python3 -m venv .env
+source .env/bin/activate
+pip install -r requirements.txt
+zappa deploy dev
+
+# Dont forget to remove
+zappa undeploy dev</code></pre>
+        </div>
+      </section>
+
+      <section>
+        <div class="wrap size-70">
+          <ul class="flexblock plans blink fadeInUp">
+            <li>
+              <a target="_blank" href="https://github.com/serverless/serverless" title="Register">
+                <div>
+                  <h1>Serverless Framework</h1>
+                  <ul class="frameworks">
+                    <li>
+                      <strong>+</strong> Multi-Vendor
+                    </li>
+                    <li>
+                      <strong>+</strong> Easy and Fast to setup
+                    </li>
+                    <li>
+                      <strong>+</strong> Many Plugins
+                    </li>
+                    <li>
+                      <strong>+</strong> Cloudformation in YAML
+                    </li>
+                    <li>
+                      <strong>+</strong> Support of Many Programming Languages
+                    </li>
+                    <li>
+                      <strong>-</strong> Written in NodeJS and not Python-Only
+                    </li>
+                    <li>
+                      <strong>-</strong> Many Configurations to make it Python-Ready
+                    </li>
+                    <li>
+                      <strong>-</strong> No Cross-Account deployment
+                    </li>
+                  </ul>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a target="_blank" href="https://github.com/Miserlou/Zappa" title="Zappa">
+                <div>
+                  <h1>Zappa <br/> Framework</h1>
+                  <ul class="frameworks">
+                    <li>
+                      <strong>+/-</strong> Python Only
+                    </li>
+                    <li>
+                      <strong>+</strong> Super fast
+                    </li>
+                    <li>
+                      <strong>+</strong> Easy Migration of WSGI Applications
+                    </li>
+                    <li>
+                      <strong>+/-</strong> AWS Only
+                    </li>
+                    <li>
+                      <strong>-</strong> Documentation is overwhelming (personally, I don't like it)
+                    </li>
+                    <li>
+                      <strong>-</strong> No Plugins
+                    </li>
+                    <li>
+                      <strong>-</strong> Manual configuration for YAML
+                    </li>
+                    <li>
+                      <strong>-</strong> After removal, no remove of S3-Bucket
+                    </li>
+                    <li>
+                      <strong>-</strong> No Cross-Account deployment
+                    </li>
+                  </ul>
+                </div>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section>
+        <div class="wrap">
+          <h1>Conclusion</h1>
+          <ul class="flexblock features">
+            <li>
+              <div>
+                <h2>
+                  <i class="fas fa-arrow-right"></i>
+                  <span class="animate">New Trend</span>
+                </h2>
+                There is a new shift towards Serverless Architecture
+              </div>
+            </li>
+            <li>
+              <div>
+                <h2>
+                  <i class="fas fa-leaf"></i>
+                  <span class="animate">Ecosystem</span>
+                </h2>
+                Many (open-source) solutions for deploying Serverless application
+              </div>
+            </li>
+            <li>
+              <div>
+                <h2>
+                  <i class="fas fa-server"></i>
+                  <span class="animate">Servers are still there</span>
+                </h2>
+                There is still some overhead in terms of configuration. But #NoSSH
+              </div>
+            </li>
+            <li>
+              <div>
+                <h2>
+                  <i class="fas fa-code"></i>
+                  <span class="animate">DevOps Culture</span>
+                </h2>
+                It embraces the DevOps Culture. Ops and Devs are coming closer.
+              </div>
+            </li>
+            <li>
+              <div>
+                <h2>
+                  <i class="fas fa-code-branch"></i>
+                  <span class="animate">Depends on the Use Case</span>
+                </h2>
+                Not everything is solveable via a single function.
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+
+
+    </article>
+    <!-- end article -->
+  </main>
+  <!-- end main -->
+
+  <!-- Required -->
+  <script src="static/js/webslides.min.js"></script>
+  <script src="static/js/highlight.pack.js"></script>
+  <script src="static/js/script.js"></script>
+</body>
+
 </html>

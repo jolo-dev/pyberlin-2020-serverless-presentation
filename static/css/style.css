@@ -31,6 +31,10 @@ h1 span {
   font-family: inherit;
 }
 
+.plans h1 {
+  margin: 2% 0;
+}
+
 .about-me {
   grid-column: 6/8;
 }
@@ -53,8 +57,14 @@ h1 span {
   padding: 2%;
 }
 
-.intro .social-media {
+.intro #social-media {
   margin-top: 2%;
+  display: none;
+}
+
+.intro #social-media a:hover,
+h2 a:hover {
+  color: #db3853;
 }
 
 .skills {
@@ -99,7 +109,9 @@ footer .download button {
 footer .download button a {
   color: white;
 }
-.fab {
+
+.fab,
+.fas {
   font-size: 1.7em;
 }
 
@@ -122,12 +134,35 @@ footer .download button a {
   font-size: 3rem;
 }
 
-.work-experiences {
-  grid-column: 2;
-  grid-row: 1 / span 2;
+span.animate {
+  width: 70%;
 }
-.work-experiences .description {
-  margin: 1%;
+
+.frameworks li strong {
+  color: #db3853;
+  font-weight: 1200;
+}
+
+.flexblock.features li span {
+  display: inline-block;
+  font-size: inherit;
+  line-height: 1;
+  margin: 0;
+  font-weight: 600;
+}
+
+@media (min-width: 1200px) {
+  .flexblock.features li span,
+  .flexblock.features li svg,
+  .flexblock.features li img {
+    float: none;
+    margin-right: 0;
+  }
+}
+
+/* Icons */
+.icons {
+  font-size: 7rem;
 }
 
 @media only screen and (max-width: 768px) {
@@ -280,6 +315,18 @@ footer .download button a {
 }
 .animate span:nth-of-type(30) {
   animation-delay: 1.45s;
+}
+.animate span:nth-of-type(31) {
+  animation-delay: 1.5s;
+}
+.animate span:nth-of-type(32) {
+  animation-delay: 1.55s;
+}
+.animate span:nth-of-type(33) {
+  animation-delay: 1.6s;
+}
+.animate span:nth-of-type(34) {
+  animation-delay: 1.65s;
 }
 /* Animation Three */
 
