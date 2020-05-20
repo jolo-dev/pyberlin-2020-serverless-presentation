@@ -382,7 +382,7 @@ npx sls remove</code></pre>
         <div class="wrap">
           <h2><a target="_blank" href="https://github.com/jolo-dev/zappa-template">Template: Zappa 
             <i class="fab fa-github"></i></a></h2>
-<pre style="margin-top: 2%;"><code class="bash">python3 -m cookiecutter # Mandatory
+<pre style="margin-top: 2%;"><code class="bash">python3 -m pip install cookiecutter # Mandatory
 
 python3 -m cookiecutter gh:jolo-dev/zappa-template
 
@@ -390,7 +390,7 @@ python3 -m cookiecutter gh:jolo-dev/zappa-template
 cd *project_slug*
 python3 -m venv .env
 source .env/bin/activate
-pip install --upgrade pip
+pip install --upgrade pip # If necessary
 pip install -r requirements.txt
 zappa deploy dev
 </code></pre>
