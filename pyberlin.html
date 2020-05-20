@@ -33,7 +33,7 @@
 
   <!-- SOCIAL CARDS (ADD YOUR INFO) -->
   <!-- TWITTER -->
-  <meta name="twitter:card" content="John Nguyen CV" />
+  <meta name="twitter:card" content="PyBerlin Serverless Demo" />
   <meta name="twitter:site" content="@johnyscrazy" />
   <meta name="twitter:creator" content="@johnyscrazy" />
   <meta name="twitter:title" content="JoLo — Twitter Account" />
@@ -54,35 +54,9 @@
   <main role="main">
     <article id="webslides" class="vertical">
       <section class="wrap">
+        <span class="fadeInUp background-right-bottom" style="background-image:url('https://secure.meetupstatic.com/photos/event/4/9/6/3/600_477918787.jpeg')"></span>
         <h1 class="fadeInDown">Serverless with AWS Lambda and Python</h1>
         <div class="animate subtitle">PyBerlin- 2020 John Nguyen</div>
-      </section>
-
-      <section>
-        <div class="wrap size-50 aligncenter">
-          <h1><strong>Agenda</strong></h1>
-          <div class="agenda-box fadeInUp bg-white shadow">
-            <ul class="flexblock reasons">
-              <li>
-                <h2>What is Serverless?</h2>
-                <p>Benefits and Limitations</p>
-              </li>
-              <li>
-                <h2>Serverless/Cloud Services</h2>
-                <p>Focusing on AWS</p>
-              </li>
-              <li>
-                <h2>AWS Lambda</h2>
-                <p>How it looks like in the AWS Console</p>
-              </li>
-              <li>
-                <h2>Demo</h2>
-                <p>Deploying Functions using Frameworks</p>
-              </li>
-            </ul>
-          </div>
-          <!-- .end .bg-white shadow -->
-        </div>
       </section>
 
       <section>
@@ -126,6 +100,33 @@
           </div>
         </div>
         <!-- .end .wrap -->
+      </section>
+
+      <section>
+        <div class="wrap size-50 aligncenter">
+          <h1><strong>Agenda</strong></h1>
+          <div class="agenda-box fadeInUp bg-white shadow">
+            <ul class="flexblock reasons">
+              <li>
+                <h2>What is Serverless?</h2>
+                <p>Benefits and Limitations</p>
+              </li>
+              <li>
+                <h2>Serverless/Cloud Services</h2>
+                <p>Focusing on AWS</p>
+              </li>
+              <li>
+                <h2>AWS Lambda</h2>
+                <p>How it looks like in the AWS Console</p>
+              </li>
+              <li>
+                <h2>Demo</h2>
+                <p>Deploying Functions using Frameworks</p>
+              </li>
+            </ul>
+          </div>
+          <!-- .end .bg-white shadow -->
+        </div>
       </section>
 
       <section class="wrap">
@@ -383,17 +384,49 @@ npx sls remove</code></pre>
             <i class="fab fa-github"></i></a></h2>
 <pre style="margin-top: 2%;"><code class="bash">python3 -m cookiecutter # Mandatory
 
-python3 -m cookiecutter gh:https://github.com/jolo-dev/zappa-template
+python3 -m cookiecutter gh:jolo-dev/zappa-template
 
 # answer prompt
 cd *project_slug*
 python3 -m venv .env
 source .env/bin/activate
+pip install --upgrade pip
 pip install -r requirements.txt
 zappa deploy dev
+</code></pre>
+        </div>
+      </section>
 
-# Dont forget to remove
-zappa undeploy dev</code></pre>
+      <section>
+          <div class="wrap">
+            <h2><a target="_blank" href="https://github.com/jolo-dev/zappa-template">When choosing Django 
+              <i class="fab fa-github"></i></a></h2>
+            <img width="100%" src="static/img/django-error.png" alt="Django Error">
+          </div>
+      </section>
+
+      <section>
+        <div class="wrap">
+          <h2><a target="_blank" href="https://github.com/jolo-dev/zappa-template">Add this to setting.py 
+            <i class="fab fa-github"></i></a></h2>
+<pre style="margin-top: 2%;"><code class="python"># In {{ project_slug }}/settings.py
+# You need to add the URL of AWS to ALLOWED_HOSTS
+# In this example it looks like this
+ALLOWED_HOSTS = ["p0m8jb2g5b.execute-api.eu-central-1.amazonaws.com"]</code></pre>
+      </section>
+
+      <section>
+        <div class="wrap">
+          <h2><a target="_blank" href="https://github.com/jolo-dev/zappa-template">Update your Project 
+            <i class="fab fa-github"></i></a></h2>
+<pre style="margin-top: 2%;"><code class="bash">zappa update dev
+zappa manage dev "collectstatic --noinput" # Add your static files to your S3-Buckets
+# Remove your work
+zappa undeploy dev
+# Note: You need to remove your S3 Buckets manually or by
+chmod +x remove_buckets.sh
+./remove_buckets.sh
+</code></pre>
         </div>
       </section>
 
@@ -526,7 +559,21 @@ zappa undeploy dev</code></pre>
         </div>
       </section>
 
-
+      <section class="bg-primary">
+        <span class="background-left-bottom" style="background-image:url('https://webslides.tv/static/images/satya.png')"></span>
+        <div class="wrap">
+          <div class="content-right">
+            <blockquote>
+              <p>"What was true then and what is true now is that we create technology so others can create more technology."</p>
+              <p><cite>Satya Nadella.</cite></p>
+            </blockquote>
+          </div>
+        </div>
+        <!-- .end .wrap -->
+        <footer>
+          <p class="alignright"><img class="whitelogo" src="static/img/microsoft.svg" alt="Microsoft"></p>
+        </footer>
+      </section>
 
     </article>
     <!-- end article -->

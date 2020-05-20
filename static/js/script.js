@@ -17,7 +17,7 @@ for (let i = 0; i < animate.length; i++) {
 }
 
 ws.el.addEventListener('ws:slide-change', function (slide) {
-  if (slide.detail.currentSlide == 3) {
+  if (slide.detail.currentSlide == 2) {
     var a = document.getElementById('social-media')
     setTimeout(() => {
       a.classList.add('animate')
